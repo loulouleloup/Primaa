@@ -1,24 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
-let users = [
-    { "name": "Available", "age": 23},
-    { "name": "Ready", "age": 24 },
-    { "name": "Started", "age": 25 }
-];
+let text = "some text";
 
-
-
-// GET all users.
-router.get('/users', (req, res) => {
-    res.status(200).json(users);
+router.get('/someData', (req, res) => {
+    res.status(200).json(text);
 });
-
-router.post('/users', (req, res) => {
-   let user = [{"name":req.body.name,"age":req.body.age}];
-    users.push(user);
-    res.status(200).json('user added');
-});
-
 
 module.exports = router;
